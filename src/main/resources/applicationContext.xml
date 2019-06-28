@@ -4,4 +4,16 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
     <!--Spring 入门配置-->
     <bean id="userService" class="com.hxzy.spring.demo01.UserServiceImpl"></bean>
+
+    <!--
+        bean的声明周期
+        scope的取值范围：
+            singleton：默认值，单例模式创建对象
+            prototype：多例创建对象，每次getBean()都创建一个新的对象
+            request:适用于web项目，将创建的对象存放到request作用域
+            session：适用于web项目，将创建的对象存放到session作用域
+            globalSession:在具有多个子项目的工程中，将对象存放到一个共享的内存，
+                            方便在多个子项目中共同使用
+    -->
+    <bean id="customerService" class="com.hxzy.spring.demo02.CustomerDaoImpl" scope="prototype" init-method="setUp" destroy-method="destroy"/>
 </beans>
