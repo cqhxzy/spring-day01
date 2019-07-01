@@ -16,4 +16,15 @@
                             方便在多个子项目中共同使用
     -->
     <bean id="customerService" class="com.hxzy.spring.demo02.CustomerDaoImpl" scope="prototype" init-method="setUp" destroy-method="destroy"/>
+    <!--通过构造函数注入属性值-->
+    <bean id="car" class="com.hxzy.spring.demo03.Car" >
+        <constructor-arg name="name" value="宝马" />
+        <constructor-arg name="price" value="800000"/>
+    </bean>
+
+    <!--通过setter注入属性值-->
+    <bean id="food" class="com.hxzy.spring.demo03.Food" >
+        <property name="name" value="奔驰" />
+        <property name="price" value="1000000"/>
+    </bean>
 </beans>
