@@ -44,4 +44,36 @@
     <bean id="emp2" class="com.hxzy.spring.demo03.Employee"
           p:name="王五"
           p:car-ref="car2" />
+    <bean id="collectionBean" class="com.hxzy.spring.demo03.CollectionBean">
+        <!--为数组注入属性-->
+        <property name="arr">
+            <list>
+                <value>str1</value>
+                <value>str2</value>
+                <value>str3</value>
+                <value>str4</value>
+                <value>str5</value>
+            </list>
+        </property>
+        <!--为list集合注入属性-->
+        <property name="list">
+            <list>
+                <!--ref指向另一个bean-->
+                <ref bean="car"/>
+                <ref bean="car2"/>
+            </list>
+        </property>
+        <property name="set">
+            <set>
+                <value>set1</value>
+                <value>set2</value>
+            </set>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="map1" value-ref="car" />
+                <entry key="map2" value-ref="car2" />
+            </map>
+        </property>
+    </bean>
 </beans>
